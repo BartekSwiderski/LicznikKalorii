@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LicznikKalorii.Models.MealEaten>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="font-family:Bahnschrift;color:darkgreen;margin-bottom:150px">Spożyte posiłki</h1>
+
+<p>
+    <a asp-action="Create" style="text-decoration:none;color:darkgreen">+ Dodaj</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th style ="color:darkgreen">
+                @Html.DisplayNameFor(model => model.MealEatenDay)
+            </th>
+            <th style="color:darkgreen">
+                @Html.DisplayNameFor(model => model.MealEatenWeight)
+            </th>
+            <th style="color:darkgreen">
+                @Html.DisplayNameFor(model => model.Meal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td style="color:darkolivegreen">
+                @Html.DisplayFor(modelItem => item.MealEatenDay)
+            </td>
+            <td style="color:darkolivegreen">
+                @Html.DisplayFor(modelItem => item.MealEatenWeight)
+            </td>
+                <td style ="color:darkolivegreen">
+                @Html.DisplayFor(modelItem => item.Meal.MealName)
+            </td >
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color:darkolivegreen;text-decoration:none">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" style="color:darkolivegreen;text-decoration:none">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color:darkolivegreen;text-decoration:none">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

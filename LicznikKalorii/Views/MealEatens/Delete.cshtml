@@ -1,0 +1,42 @@
+﻿@model LicznikKalorii.Models.MealEaten
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style="font-family:Bahnschrift;color:darkgreen;margin-bottom:150px">Usuń</h1>
+
+<h3 style="font-family:Bahnschrift;color:darkgreen">Jesteś pewien, że chcesz usunąć ten posiłek?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" style="color:darkgreen">
+            @Html.DisplayNameFor(model => model.MealEatenDay)
+        </dt>
+        <dd class="col-sm-10" style="color:darkolivegreen">
+            @Html.DisplayFor(model => model.MealEatenDay)
+        </dd>
+        <dt class="col-sm-2" style="color:darkgreen">
+            @Html.DisplayNameFor(model => model.MealEatenWeight)
+        </dt>
+        <dd class="col-sm-10" style="color:darkolivegreen">
+            @Html.DisplayFor(model => model.MealEatenWeight)
+        </dd>
+
+
+        <dt class="col-sm-2" style="color:darkgreen">
+            @Html.DisplayNameFor(model => model.MealId)
+        </dt>
+        <dd class="col-sm-10" style="color:darkolivegreen">
+            @Html.DisplayFor(model => model.Meal.MealName)
+        </dd>
+      
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" style="text-decoration:none;color:darkgreen">Powrót</a>
+    </form>
+</div>

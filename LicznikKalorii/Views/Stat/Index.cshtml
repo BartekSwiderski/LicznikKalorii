@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1 style="font-family:Bahnschrift;color:darkgreen;margin-bottom:150px">Statystyki spożytych posiłków z ostatnich 14 dni</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th style="color:darkgreen">
+                Jaki posiłek
+            </th>
+
+            <th style="color:darkgreen">
+                kaloryczność posiłku na 100g
+            </th>
+            <th style="color:darkgreen">
+                Ilość porcji spożyta w ostatnich 14 dniach
+            </th>
+
+            <th style="color:darkgreen">
+                Największa spożyta porcja
+            </th>
+            <th style="color:darkgreen">
+                Kaloryczność największej porcji
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stat in ViewBag.Stat)
+        {
+            <tr>
+
+
+                <td style="color:darkolivegreen">
+                    @stat.name
+                </td>
+                <td style="color:darkolivegreen">
+                    @stat.kcal
+                </td>
+                <td style="color:darkolivegreen">
+                    @stat.MealCuount
+                </td>
+                <td style="color:darkolivegreen">
+                    @stat.maxWeight
+                </td>
+                <td style="color:darkolivegreen">
+                    @stat.porcja
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
